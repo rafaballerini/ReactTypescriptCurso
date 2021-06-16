@@ -1,2 +1,0 @@
-# Desenvolvendo o projeto
-
