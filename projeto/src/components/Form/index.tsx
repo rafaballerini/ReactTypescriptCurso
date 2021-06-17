@@ -1,12 +1,14 @@
 import React from 'react';
 
 function Form () {
+
+    function handleOnSubmit(evento: React.FormEvent<HTMLFormElement>){
+        console.log("tarefa cadastrada")
+        evento.preventDefault()
+    }
+
     return (
-        <form onSubmit={(evento) => {
-            console.log("tarefa cadastrada")
-            evento.preventDefault()
-            }
-        }>
+        <form onSubmit={handleOnSubmit}>
             <div className="inputContainer">
                 <label htmlFor="tarefa">Nova tarefa</label>
                 <input type="text" name="tarefa" id="tarefa" placeholder="O que você estudará?" required/>
