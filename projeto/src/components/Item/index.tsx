@@ -1,10 +1,11 @@
 import React from 'react'
+import {ITaskData} from '../../types/Task'
 
-function Item(){
+function Item(props: {item: ITaskData}){
     return(
         <li>
-            <h1>Estudar React</h1>
-            <span>15min</span>
+            <h1>{props.item.task}</h1>
+            <span>{props.item.time}</span>
         </li>
     )
 }

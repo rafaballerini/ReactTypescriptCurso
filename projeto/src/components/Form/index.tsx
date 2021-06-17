@@ -1,14 +1,19 @@
 import React from 'react';
 import { useState } from 'react';
+import { ITaskData } from '../../types/Task';
 
-function Form () {
+interface IFormProps {
+  saveTask: (data: ITaskData) => void;
+}
+
+function Form (props: IFormProps) {
 
   const [task, setTask] = useState('')
   const [time, setTime] = useState('00:00')
 
   function handleOnSubmit (event: React.FormEvent<HTMLFormElement>){
-    console.log(task, time)
     event.preventDefault()
+    props.saveTask({task, time})
   }
 
   return (

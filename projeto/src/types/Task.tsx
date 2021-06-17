@@ -1,4 +1,4 @@
-export interface IItemProps {
+export interface ITaskData {
     time: string,
     task: string,
     selected?: boolean;
