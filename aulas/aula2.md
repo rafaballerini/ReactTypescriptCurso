@@ -1,6 +1,6 @@
 # Desenvolvendo o projeto
 
-*class components*
+*vídeo 1 e 2 - class components*
 
 1. Criação da pasta `components` dentro de `src` para colocarmos cada componente que iremos desenvolver em suas respectivas pastas.
 
@@ -40,7 +40,7 @@ export default Form;
 > Lembrar de explicar onSubmit do botão no formulário e as tags e propriedades usadas.
 > Lembrar que `{{ display: 'none'}}` é escrito dessa forma, pois as chaves de fora servem pra dizer que é um código javascript dentro do HTML e as outras são pra dizer que é um objeto js.
 
-*Pausa de vídeo - Lidando com eventos*
+*Pausa de vídeo 3 - Lidando com eventos*
 
 5. Mostra o onSubmit funcionando no console
 
@@ -80,10 +80,10 @@ Podemos ver ao digitarmos `evento.` e apertarmos ctrl + espaço que aparecerão 
 
 Se deixássemos sem tipagem, as configurações padrões do typescript reclamariam e pediriam para colocar algum tipo, nem que seja o `: any` (qualquer tipo). Porém, se deixarmos com isso, não poderemos ver quais funções e propriedades esse evento `React.FormEvent<HTMLFormElement>` tem.
 
-*Pausa de vídeo - function components*
+*Pausa de vídeo 4 - function components*
 
 6. Transforma em `function component`, pois é uma forma mais atualizada.
 
-*Pausa de vídeo - estilização*
+*Pausa de vídeo 5 - estilização*
 
 7. Estilização com SASS (em breve)
