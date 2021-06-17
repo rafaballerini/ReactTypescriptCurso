@@ -14,6 +14,8 @@ function Form (props: IFormProps) {
   function handleOnSubmit (event: React.FormEvent<HTMLFormElement>){
     event.preventDefault()
     props.saveTask({task, time})
+    setTask('')
+    setTime('00:00')
   }
 
   return (
@@ -32,9 +34,12 @@ function Form (props: IFormProps) {
       <div className="inputContainer">
         <label htmlFor="time">Tempo</label>
         <input 
-          type="time" 
+          type="time"
+          step="1" 
           name="time" 
           id="time" 
+          min="00:00:00"
+          max="01:30:00"
           value={time}
           placeholder="00:00" 
           onChange={(event) => { setTime(event.target.value) }}
