@@ -6,7 +6,7 @@ import { ITaskData } from '../types/Task';
 function App() {
   return (
     <div className="App">
-      <Form saveTask={["12:33:00", "React"]}/>
+      <Form saveTask={handle}/>
       <Item/>
     </div>
   );

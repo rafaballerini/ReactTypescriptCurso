@@ -36,6 +36,15 @@ interface IFormProps {
 ```
 
 
+import {IItemProps} from '../../types/Item'
+
+interface IFormProps {
+    saveItem: (time: string, task: string) => void
+}
+
+{ saveItem }: IFormProps
+
+
 
 
 Perguntas:
