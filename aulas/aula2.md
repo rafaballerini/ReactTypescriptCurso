@@ -50,23 +50,40 @@ export default Form;
 
 A página é recarregada por padrão no HTML, então pra isso usaremos o evento `evento` que o onSubmit passará como parâmetro (passa mouse por cima para mostrar o tipo), pois ele possui uma função `preventDefault()` que não acionará o reload da página automático.
 
-**ver o tipo do evento e adicionar `: React.FormEvent<HTMLFormElement>`se necessário**
+Agora teremos então 2 linhas dentro da função dentro do return, o que fica um pouco ruim para legibilidade. Para isso, vamos declarar essa mesma função acima do `return` e apenas chamá-la no `onSubmit`.
 
-Porém agora iramos usar mais de uma linha dentro da mesma função, então vamos criar um nome pra ela e declará-la acima do componente.
-
-Para isso, chamaremos de `<form onSubmit={handleOnSubmit}>`
-
-E declararemos da seguinte forma:
-
+*antes*
 ```ts
-const handleOnSubmit = (evento: React.FormEvent<HTMLFormElement>) => {
+<form onSubmit={(evento) => {
     console.log("tarefa cadastrada")
     evento.preventDefault()
+    }
+}>
+```
+
+*depois*
+```ts
+function handleOnSubmit(evento: React.FormEvent<HTMLFormElement>){
+        console.log("tarefa cadastrada")
+        evento.preventDefault()
 }
 ```
+
+```ts
+<form onSubmit={handleOnSubmit}>
+
+```
+
+Podemos ver ao digitarmos `evento.` e apertarmos ctrl + espaço que aparecerão todos as funções e propriedades que poderão ser usadas.
+
+![evento](https://media.discordapp.net/attachments/826504749561413662/855084991078465556/unknown.png)
+
+Se deixássemos sem tipagem, as configurações padrões do typescript reclamariam e pediriam para colocar algum tipo, nem que seja o `: any` (qualquer tipo). Porém, se deixarmos com isso, não poderemos ver quais funções e propriedades esse evento `React.FormEvent<HTMLFormElement>` tem.
 
 *Pausa de vídeo - function components*
 
 6. Transforma em `function component`, pois é uma forma mais atualizada.
+
+*Pausa de vídeo - estilização*
 
 7. Estilização com SASS (em breve)

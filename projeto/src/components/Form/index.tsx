@@ -1,11 +1,12 @@
 import React from 'react';
 
-const handleOnSubmit = (evento: React.FormEvent<HTMLFormElement>) => {
-    console.log("tarefa cadastrada")
-    evento.preventDefault()
-}
-
 function Form () {
+
+    function handleOnSubmit (evento: React.FormEvent<HTMLFormElement>){
+        console.log("tarefa cadastrada")
+        evento.preventDefault()
+    }
+
     return (
         <form onSubmit={handleOnSubmit}>
             <div className="inputContainer">
