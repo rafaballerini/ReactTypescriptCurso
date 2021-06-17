@@ -18,7 +18,33 @@ Colocar dentro deles toda a lógica do item da lista `<li>`.
 
 [Link da documentação](https://pt-br.reactjs.org/docs/hooks-state.html)
 
-2. Adicionar os estados para os inputs de `item` e `tempo`.
+2. Adicionar os estados para os inputs de `task` e `time`.
+
+Para isso então crio as duas `const`
+
+```ts
+const [task, setTask] = useState('')
+const [time, setTime] = useState('00:00')
+```
+
+E também adiciono as propriedades dos inputs de `task` e `time`:
+
+```ts
+value={task}
+onChange={(event) => { setTask(event.target.value) }}
+```
+
+Por fim, ao invés de imprimirmos no `onSubmit` quando dermos enter com o `console.log("texto")`, posso agora imprimir esses valores que eu inserir:
+
+```ts
+function handleOnSubmit (event: React.FormEvent<HTMLFormElement>){
+    console.log(task, time)
+    event.preventDefault()
+}
+```
+
+
+
 
 
 . Criaremos a função `saveItem`, que irá de fato salvar o que escrevemos no formulário
