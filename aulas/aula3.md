@@ -1,6 +1,6 @@
 # Enviando informações entre componentes e lidando com estados
 
-*vídeo 1 adicionando mais componentes e estilização*
+## *vídeo 1 adicionando mais componentes e estilização*
 
 1. Criamos uma nova pasta dentro de `components` chamada `List` para adicionarmos os arquivos em que desenvolveremos os items na lista de tarefas `index.tsx` e `style.scss`
 
@@ -14,7 +14,7 @@ Colocar dentro deles toda a lógica do item da lista `<li>`.
 
 5. Estilização
 
-*Quebra de vídeo 2 - Hook useState()*
+## *Quebra de vídeo 2 - Hook useState()*
 
 **Queremos agora fazer o nosso `Form` enviar as informações digitadas para o nosso `Item`.**
 
@@ -47,7 +47,7 @@ function handleOnSubmit (event: React.FormEvent<HTMLFormElement>){
 }
 ```
 
-*Quebra de vídeo 3 - interfaces*
+## *Quebra de vídeo 3 - interfaces*
 
 1. Agora no onSubmit queremos salvar as informações e não somente imprimir no `console.log()`
 
@@ -75,7 +75,7 @@ function handleOnSubmit (event: React.FormEvent<HTMLFormElement>){
 
 Agora declaramos a nossa função que irá salvar as informações digitadas, porém quando chamamos ela dentro do nosso componente no `onSubmit`, ele não reconhece essa função. Em breve veremos como resolver isso.
 
-*Quebra de vídeo 4 - props*
+## *Quebra de vídeo 4 - props*
 
 Agora colocaremos como parâmetro no nosso componente também:
 
