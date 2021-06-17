@@ -1,12 +1,21 @@
 import React from 'react';
-// import Item from '../Item/index'
+import Item from '../Item/index'
+import { ITaskData } from '../../types/Task'
 
-function List() {
+interface ITaskListProps {
+    list: ITaskData[]
+  }
+
+function List(props: ITaskListProps) {
     return (
     <aside>
         <h2>Tarefas</h2>
         <ul>
-            {/* <Item /> */}
+            {
+                props.list.map((item) => (
+                    <Item item={item}/>
+                ))
+            }
         </ul>
     </aside>
     )

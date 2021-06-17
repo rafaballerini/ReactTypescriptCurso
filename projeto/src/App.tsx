@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import Form from './components/Form/index'
-import Item from './components/Item/index';
+import List from './components/List/index'
 import { ITaskData } from './types/Task'
 
 function App() {
 
-  const [item, setItem] = useState<ITaskData>()
+  const [list, setList] = useState<ITaskData[]>([])
   
   function handleSaveTask(data: ITaskData) {
-    setItem({ ...data, completed: false, selected: false })
+    setList([...list, { ...data, completed: false, selected: false }])
   }
 
   return (
     <div className="App">
       <Form saveTask={handleSaveTask}/>
-      {item && <Item item={item}/>}
+      <List list={list}/>
     </div>
   );
 }
