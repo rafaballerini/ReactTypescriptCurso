@@ -50,12 +50,19 @@ export default Form;
 
 A página é recarregada por padrão no HTML, então pra isso usaremos o evento `evento` que o onSubmit passará como parâmetro (passa mouse por cima para mostrar o tipo), pois ele possui uma função `preventDefault()` que não acionará o reload da página automático.
 
+**ver o tipo do evento e adicionar `: React.FormEvent<HTMLFormElement>`se necessário**
+
+Porém agora iramos usar mais de uma linha dentro da mesma função, então vamos criar um nome pra ela e declará-la acima do componente.
+
+Para isso, chamaremos de `<form onSubmit={handleOnSubmit}>`
+
+E declararemos da seguinte forma:
+
 ```ts
-<form onSubmit={(evento) => {
+const handleOnSubmit = (evento: React.FormEvent<HTMLFormElement>) => {
     console.log("tarefa cadastrada")
     evento.preventDefault()
-    }
-}>
+}
 ```
 
 *Pausa de vídeo - function components*
