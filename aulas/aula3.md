@@ -10,9 +10,18 @@
 
 Colocar dentro deles toda a lógica do item da lista `<li>`.
 
-5. Fazer o nosso `Form` enviar as informações digitadas para o nosso `Item`.
+*Pausa de vídeo - Hook useState()*
 
-6. Criaremos a função `saveItem`, que irá de fato salvar o que escrevemos no formulário
+**Queremos agora fazer o nosso `Form` enviar as informações digitadas para o nosso `Item`.**
+
+1. Falar sobre o `useState()` que utilizaremos para cada input
+
+[Link da documentação](https://pt-br.reactjs.org/docs/hooks-state.html)
+
+2. Adicionar os estados para os inputs de `item` e `tempo`.
+
+
+. Criaremos a função `saveItem`, que irá de fato salvar o que escrevemos no formulário
 
 Para isso, usaremos uma interface
 
