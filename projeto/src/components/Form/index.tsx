@@ -2,9 +2,9 @@ import React from 'react';
 
 function Form () {
 
-    function handleOnSubmit(evento: React.FormEvent<HTMLFormElement>){
+    function handleOnSubmit(event: React.FormEvent<HTMLFormElement>){
         console.log("tarefa cadastrada")
-        evento.preventDefault()
+        event.preventDefault()
     }
 
     return (
