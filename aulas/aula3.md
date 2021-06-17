@@ -75,7 +75,7 @@ function handleOnSubmit (event: React.FormEvent<HTMLFormElement>){
 
 Agora declaramos a nossa função que irá salvar as informações digitadas, porém quando chamamos ela dentro do nosso componente no `onSubmit`, ele não reconhece essa função. Em breve veremos como resolver isso.
 
-## *Quebra de vídeo 4 - props*
+## *Quebra de vídeo 4 e 5- props*
 
 Agora colocaremos como parâmetro no nosso componente também:
 
@@ -121,4 +121,79 @@ Para isso, iremos tirar esses valores fixos no componente e colocar os valores i
 ```ts
 <h1>{props.item.task}</h1>
 <span>{props.item.time}</span>
+```
+
+## *Quebra de vídeo 6 - listando elementos*
+
+1. Criação da interface da `List`
+
+```ts
+import { ITaskData } from '../../types/Task'
+
+interface ITaskListProps {
+  list: ITaskData[]
+}
+```
+
+Passa por parâmetro dentro do componente:
+
+```ts
+function List(props: ITaskListProps)
+```
+
+Agora faremos um [.map](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/map) para listar todos os itens
+
+```ts
+<ul>
+    {
+        props.list.map((item) => (
+            <Item item={item}/>
+        ))
+    }
+</ul>
+```
+
+Pode usar () depois do arrow function pois já estamos retornando diretamente
+
+Além disso, no nosso `App()` precisamos chamar a `List` e não mais o `Item`:
+
+```ts
+return (
+  <div className="App">
+    <Form saveTask={handleSaveTask}/>
+    <List/>
+  </div>
+);
+```
+
+Como estamos usando typescript, quando apertamos ctrl + espaço aparecem as propriedades desse componente.
+
+![Mágica do ctrl espaço](https://media.discordapp.net/attachments/826504749561413662/855138879660097596/unknown.png)
+
+Agora não usamos mais o `useState` para o item, mas sim para a lista. Então também podemos tirar a importação do item:
+
+```ts
+function App() {
+
+  const [list, setList] = useState<ITaskData[]>([])
+  
+  function handleSaveTask(data: ITaskData) {
+    setList([{ ...data, completed: false, selected: false }])
+  }
+
+  return (
+    <div className="App">
+      <Form saveTask={handleSaveTask}/>
+      <List list={list}/>
+    </div>
+  );
+}
+```
+
+Agora se testarmos, veremos que o item será apenas atualizado por um novo. Então precisamos alterar a nossa manipulação de estado da lista, enviando não somente o item alterado, mas todos os que já haviam sido cadastrados. Para isso usamos o spread operator:
+
+```ts
+function handleSaveTask(data: ITaskData) {
+  setList([...list, { ...data, completed: false, selected: false }])
+}
 ```
