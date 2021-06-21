@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Form from './components/Form/index'
 import List from './components/List/index'
 import Stopwatch from './components/Stopwatch/index'
@@ -20,13 +20,14 @@ function App() {
       setSelected(item)
       newList[index] = item
       setList(newList)
+      console.log(item)
   }
 
   return (
     <div className="App">
       <Form saveTask={handleSaveTask}/>
       <List list={list} onClick={handleOnClick}/>
-      <Stopwatch defaultTime={selected?.time || "00:00:00"}/>
+      <Stopwatch defaultTime={selected?.time}/>
     </div>
   );
 }

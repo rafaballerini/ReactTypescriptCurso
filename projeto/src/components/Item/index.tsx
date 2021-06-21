@@ -1,4 +1,3 @@
-import React from 'react'
 import {ITaskData} from '../../types/Task'
 
 interface IItemProps {

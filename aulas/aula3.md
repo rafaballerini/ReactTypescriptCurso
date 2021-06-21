@@ -73,6 +73,18 @@ function handleOnSubmit (event: React.FormEvent<HTMLFormElement>){
 }
 ```
 
+**Ideia de desafio:** Limpar o formulário após submissão 
+
+Resposta:
+```ts
+function handleOnSubmit (event: React.FormEvent<HTMLFormElement>){
+  event.preventDefault()
+  props.saveTask({task, time})
+  setTask('')
+  setTime('00:00')
+}
+```
+
 Agora declaramos a nossa função que irá salvar as informações digitadas, porém quando chamamos ela dentro do nosso componente no `onSubmit`, ele não reconhece essa função. Em breve veremos como resolver isso.
 
 ## *Quebra de vídeo 4 e 5- props*
