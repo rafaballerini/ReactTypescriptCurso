@@ -1,0 +1,32 @@
+.nova-tarefa {
+  grid-area: nova-tarefa;
+  background-color: #7687A1;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 24px;
+  box-shadow: 2px 4px 4px #000000;
+
+  .inputContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    label {
+      margin-bottom: 8px;
+    }
+
+    input {
+      border: unset;
+      border-radius: 5px;
+      background-color: #5D677C;
+      padding: 8px 12px 4px;
+      box-shadow: 0px 2px 4px #2D2B2B inset;
+      &::placeholder {
+        color: #BFBFBF;
+      }
+    }
+  }
+}

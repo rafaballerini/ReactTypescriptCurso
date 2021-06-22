@@ -1,8 +1,9 @@
 import { useState } from 'react'
-import {Form} from './components/Form/index'
-import {List} from './components/List/index'
-import {Stopwatch} from './components/Stopwatch/index'
-import { ITaskData } from './types/Task'
+import {Form} from '../components/Form/index'
+import {List} from '../components/List/index'
+import {Stopwatch} from '../components/Stopwatch/index'
+import { ITaskData } from '../types/Task'
+import './style.scss'
 
 function timeToSeconds(defaultTime: string){
   const [hourString, minuteString, secondString] = defaultTime.split(':')
@@ -46,8 +47,8 @@ function App() {
   return (
     <div className="App">
       <Form saveTask={handleSaveTask}/>
-      <List list={list} onClick={handleOnClick}/>
       <Stopwatch time={time} setTime={setTime} onFinish={handleOnFinish}/>
+      <List list={list} onClick={handleOnClick}/>
     </div>
   );
 }

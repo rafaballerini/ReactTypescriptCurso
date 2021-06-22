@@ -1,4 +1,5 @@
 import { TimerView } from '../TimerView/index'
+import './style.scss'
 
 interface IStopwatchProps {
   time: number;
@@ -21,7 +22,7 @@ export function Stopwatch(props: IStopwatchProps){
   }
 
   return (
-    <div>
+    <div className="cronometro">
       <div>
         <TimerView totalSeconds={props.time}/>
       </div>

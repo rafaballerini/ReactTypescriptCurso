@@ -1,0 +1,17 @@
+.App {
+  min-width: 320px;
+  width: 100%;
+  background-color: #171717;
+  padding: 32px;
+  box-sizing: border-box;
+  height: 100%;
+  border-radius: 10px;
+
+  display: grid;
+  grid-template-rows: 1fr 1fr 6fr;
+  grid-template-areas: 
+    "nova-tarefa"
+    "cronometro"
+    "tarefas"
+  ;
+}

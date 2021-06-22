@@ -1,5 +1,6 @@
 import {Item} from '../Item/index'
 import { ITaskData } from '../../types/Task'
+import './style.scss'
 
 interface ITaskListProps {
   list: ITaskData[],
@@ -8,7 +9,7 @@ interface ITaskListProps {
 
 export function List(props: ITaskListProps) {
   return (
-    <aside>
+    <aside className="lista-tarefas">
       <h2>Tarefas</h2>
       <ul>
         {

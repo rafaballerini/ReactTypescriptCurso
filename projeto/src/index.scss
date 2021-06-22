@@ -58,10 +58,16 @@ html {
 
 body {
 	font-family: 'Manjari', sans-serif;
-	background-color: #818181;
+	background-color: #4C4C4C;
 	display: flex;
-	align-items: center;
 	justify-content: center;
 	height: 100%;
+	width: 100%;
+	color: #F0F0F0;
+	padding: 16px;
+	box-sizing: border-box;
+}
+
+#root {
 	width: 100%;
 }
