@@ -6,7 +6,7 @@ interface IFormProps {
   saveTask: (data: ITaskData) => void;
 }
 
-function Form (props: IFormProps) {
+export function Form (props: IFormProps) {
 
   const [task, setTask] = useState('')
   const [time, setTime] = useState('00:00')
@@ -53,5 +53,3 @@ function Form (props: IFormProps) {
     </form>
   )
 }
-
-export default Form;

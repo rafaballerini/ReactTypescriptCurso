@@ -10,7 +10,7 @@ const delay = (ms = 1000) => new Promise((resolve, _) => {
   setTimeout(resolve, ms);
 })
 
-function Stopwatch(props: IStopwatchProps){
+export function Stopwatch(props: IStopwatchProps){
   
   async function handleOnClick() {
     for (let i = 1; i <= props.time; i++) {
@@ -29,5 +29,3 @@ function Stopwatch(props: IStopwatchProps){
     </div>
   )
 }
-
-export default Stopwatch

@@ -6,7 +6,7 @@ interface IItemProps {
   onClick: (index: number) => void
 }
 
-function Item(props: IItemProps) {
+export function Item(props: IItemProps) {
   return (
     <li
       className={`${props.item.selected ? "selected" : "not_selected"}`}
@@ -17,5 +17,3 @@ function Item(props: IItemProps) {
     </li>
   )
 }
-
-export default Item

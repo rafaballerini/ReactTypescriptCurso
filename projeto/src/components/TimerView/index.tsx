@@ -1,4 +1,3 @@
-
 interface ITimerViewProps {
   totalSeconds: number
 }
