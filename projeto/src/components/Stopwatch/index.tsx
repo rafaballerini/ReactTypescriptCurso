@@ -1,50 +1,29 @@
-import { useState } from 'react'
+import { TimerView } from '../TimerView/index'
 
 interface IStopwatchProps {
-  defaultTime?: string;
+  time: number;
+  setTime: React.Dispatch<React.SetStateAction<number>>;
+  onFinish:() => void;
 }
 
-function timeToNumber(defaultTime: string){
-  // {00:00:00}
-  const [hourString, minuteString, secondString] = defaultTime.split(':')
-  const timeSeconds = (parseInt(hourString) * 3600) + (parseInt(minuteString) * 60) + parseInt(secondString)
-  return timeSeconds
-}
-
-// function formatToTimeString(timeSeconds: number) {
-//   const minutes = ('0'+ Math.floor(timeSeconds / 60)).slice(-2);  
-//   const secondsLeft = ('0'+ timeSeconds % 60).slice(-2);
-
-//   return `${minutes}:${secondsLeft}`;
-// }
+const delay = (ms = 1000) => new Promise((resolve, _) => {
+  setTimeout(resolve, ms);
+})
 
 function Stopwatch(props: IStopwatchProps){
-
-  const [time, setTime] = useState(timeToNumber(props.defaultTime || "01:10:10"))
-
-  function handleOnClick(){
-    const timer = setInterval(() => { 
-      setTime((previous) => {
-        if (!previous) {
-          clearInterval(timer);
-        }
-        return --previous
-      }) 
-    }, 1000);
+  
+  async function handleOnClick() {
+    for (let i = 1; i <= props.time; i++) {
+      await delay()
+      props.setTime((prevState) => prevState - 1)
+    }
+    props.onFinish()
   }
 
   return (
     <div>
       <div>
-          <div>
-              <span>{time}</span>
-              {/* <span>{minuteRight}</span>
-          </div>
-          <span>:</span>
-          <div>
-              <span>{secondLeft}</span>
-              <span>{secondRight} </span> */}
-          </div>
+        <TimerView totalSeconds={props.time}/>
       </div>
       <button onClick={handleOnClick}>Começar</button>
     </div>
