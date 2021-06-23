@@ -4,7 +4,7 @@ import './style.scss'
 
 interface ITaskListProps {
   list: ITaskData[],
-  onClick: (index: number) => void
+  onClick: (item: ITaskData, index: number) => void
 }
 
 export function List(props: ITaskListProps) {
@@ -15,7 +15,7 @@ export function List(props: ITaskListProps) {
         {
           props.list.map((item, index) => (
             <Item 
-              key={item.task}
+              key={item.id}
               item={item} 
               index={index} 
               onClick={props.onClick}/>

@@ -1,4 +1,5 @@
 import { TimerView } from '../TimerView/index'
+import { date } from '../../common/utils/date'
 import './style.scss'
 
 interface IStopwatchProps {
@@ -7,15 +8,11 @@ interface IStopwatchProps {
   onFinish:() => void;
 }
 
-const delay = (ms = 1000) => new Promise((resolve, _) => {
-  setTimeout(resolve, ms);
-})
-
 export function Stopwatch(props: IStopwatchProps){
   
   async function handleOnClick() {
     for (let i = 1; i <= props.time; i++) {
-      await delay()
+      await date.delay()
       props.setTime((prevState) => prevState - 1)
     }
     props.onFinish()

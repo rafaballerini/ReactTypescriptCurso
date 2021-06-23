@@ -3,13 +3,8 @@ import {Form} from '../components/Form/index'
 import {List} from '../components/List/index'
 import {Stopwatch} from '../components/Stopwatch/index'
 import { ITaskData } from '../types/Task'
+import { date } from 'common/utils/date'
 import './style.scss'
-
-function timeToSeconds(defaultTime: string){
-  const [hourString, minuteString, secondString] = defaultTime.split(':')
-  const timeSeconds = (parseInt(hourString) * 3600) + (parseInt(minuteString) * 60) + parseInt(secondString)
-  return timeSeconds
-}
 
 function App() {
 
@@ -21,26 +16,25 @@ function App() {
     setList([...list, { ...data, completed: false, selected: false }])
   }
 
-  function handleOnClick(index: number) {
-    const newList = list
-    const item = newList[index]
-      item.selected = true
-      setSelected(item)
-      newList[index] = item
-      setList([...newList])
-      setTime(timeToSeconds(item.time))
+  function handleOnClick(item: ITaskData, index: number) {
+    item.selected = true
+    setSelected(item)
+    setList((prevList: ITaskData[]) => 
+        prevList.map((prevItem: ITaskData, prevIndex: number) => (
+          prevIndex === index ? {...prevItem, selected: true} : prevItem
+        ))
+    )  
+    setTime(date.timeToSeconds(item.time)) 
   }
 
   function handleOnFinish() {
     if (selected){
-      const newList = list
-      const index = list.findIndex(item => item.task === selected?.task)
-      const item = newList[index]
-        item.selected = false
-        item.completed = true
-        newList[index] = item
-        setList([...newList])
-        setTime(0)
+      const item = selected
+      setList((prevList: ITaskData[]) => 
+      prevList.map((prevItem: ITaskData) => (
+        prevItem.id === item.id ? {...prevItem, selected: false, completed: true} : prevItem
+      )))
+      setTime(0)
     }
   }
 

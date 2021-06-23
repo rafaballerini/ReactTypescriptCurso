@@ -7,6 +7,8 @@ interface IFormProps {
   saveTask: (data: ITaskData) => void;
 }
 
+let count = 0
+
 export function Form (props: IFormProps) {
 
   const [task, setTask] = useState('')
@@ -14,9 +16,10 @@ export function Form (props: IFormProps) {
 
   function handleOnSubmit (event: React.FormEvent<HTMLFormElement>){
     event.preventDefault()
-    props.saveTask({task, time})
+    props.saveTask({task, time, id: count})
     setTask('')
     setTime('00:00')
+    count++
   }
 
   return (
