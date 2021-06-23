@@ -4,7 +4,7 @@
   border-radius: 10px;
   padding: 12px;
   margin-bottom: 24px;
-  box-shadow: 2px 4px 4px #000000;
+  box-shadow: 2px 4px 4px #0000009F;
 
   .inputContainer {
     display: flex;
@@ -16,14 +16,17 @@
 
     label {
       margin-bottom: 8px;
+      font-size: 1.25rem;
     }
 
     input {
+      width: 100%;
+      box-sizing: border-box;
       border: unset;
       border-radius: 5px;
       background-color: #5D677C;
       padding: 8px 12px 4px;
-      box-shadow: 0px 2px 4px #2D2B2B inset;
+      box-shadow: 0px 2px 4px #2D2B2B9F inset;
       &::placeholder {
         color: #BFBFBF;
       }

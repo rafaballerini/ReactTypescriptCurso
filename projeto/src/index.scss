@@ -42,6 +42,8 @@ table {
 	border-spacing: 0;
 }
 
+
+// Aqui começa customização do reset
 input {
 	font-family: inherit;
 	font-size: inherit;
@@ -49,12 +51,21 @@ input {
 	color: inherit;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Manjari&display=swap');
-
 html {
 	width: 100vw;
 	height: 100vh;
 }
+
+button {
+	border: unset;
+	background-color: unset;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	color: inherit; 
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Manjari&display=swap');
 
 body {
 	font-family: 'Manjari', sans-serif;

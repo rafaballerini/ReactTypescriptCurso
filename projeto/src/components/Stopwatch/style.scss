@@ -1,3 +1,34 @@
 .cronometro {
   grid-area: cronometro;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .relogio-wrapper {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #7687A1;
+    border-radius: 10px;
+    padding: 16px 12px;
+    box-shadow: 2px 4px 4px #0000009F;
+    margin-bottom: 24px;
+    font-size: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  button {
+    color: #272626;
+    font-size: 1.25rem;
+    background-color: #9DAC92;
+    padding: 8px 16px;
+    border-radius: 10px;
+    box-shadow: 2px 4px 4px #0000009F;
+    
+    &:active {
+      background-color: #7E8876;
+      box-shadow: 2px 2px 4px #0000009F inset;
+    }
+  }
 }

@@ -20,7 +20,7 @@ export function Stopwatch(props: IStopwatchProps){
 
   return (
     <div className="cronometro">
-      <div>
+      <div className="relogio-wrapper">
         <TimerView totalSeconds={props.time}/>
       </div>
       <button onClick={handleOnClick}>Começar</button>
