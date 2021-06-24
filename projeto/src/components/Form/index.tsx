@@ -31,7 +31,7 @@ export function Form (props: IFormProps) {
           name="task" 
           id="task" 
           value={task}
-          placeholder="O que você estudará?" 
+          placeholder="O que você fará?" 
           onChange={(event) => { setTask(event.target.value) }}
           required/>
       </div>
