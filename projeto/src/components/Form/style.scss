@@ -5,14 +5,13 @@
   padding: 12px;
   margin-bottom: 24px;
   box-shadow: 2px 4px 4px #0000009F;
+  display:flex;
+  flex-direction: column;
 
   .inputContainer {
     display: flex;
     flex-direction: column;
     margin-bottom: 16px;
-    &:last-of-type {
-      margin-bottom: 0;
-    }
 
     label {
       margin-bottom: 8px;
@@ -30,6 +29,21 @@
       &::placeholder {
         color: #BFBFBF;
       }
+    }
+  }
+
+  button {
+    align-self: center;
+    color: #272626;
+    font-size: 1.25rem;
+    background-color: #9DAC92;
+    padding: 8px 16px;
+    border-radius: 10px;
+    box-shadow: 2px 4px 4px #0000009F;
+    
+    &:active {
+      background-color: #7E8876;
+      box-shadow: 2px 2px 4px #0000009F inset;
     }
   }
 }

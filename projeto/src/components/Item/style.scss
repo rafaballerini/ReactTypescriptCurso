@@ -1,0 +1,38 @@
+.item {
+  background-color: #4D4D4D;
+  border-radius: 8px;
+  box-shadow: 2px 4px 4px #0000009F;
+  padding: 12px;
+  margin-bottom: 8px;
+  position: relative;
+
+  h3 {
+    margin-bottom: 8px;
+  }
+
+  span {
+    color: #818181;
+  }
+}
+
+.item--selected {
+  background-color: #292929;
+  box-shadow: 2px 4px 4px #0000009F inset;
+}
+
+.item--completed {
+  background-color: #566F42;
+
+  .concluido {
+    background-image: url('../../assets/img/check-mark.svg');
+    background-repeat: no-repeat;
+    background-size: 38px 38px;
+    display: block;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    width: 42px;
+    height: 43px;
+  }
+}

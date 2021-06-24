@@ -48,11 +48,7 @@ export function Form (props: IFormProps) {
           onChange={(event) => { setTime(event.target.value) }}
           required/>
         </div>
-      <button 
-        type="submit" 
-        style={{ display: 'none'}}>
-          Confirmar Tarefa
-      </button>
+      <button type="submit">Confirmar Tarefa</button>
     </form>
   )
 }
