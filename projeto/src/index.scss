@@ -77,3 +77,20 @@ body {
 #root {
 	width: 100%;
 }
+
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: unset;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 4px;
+	background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}

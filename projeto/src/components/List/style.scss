@@ -10,6 +10,7 @@
   ul {
     max-height: 350px;
     overflow-y: scroll;
+  	scrollbar-width: thin;
   }
 
   @media screen and (min-width:1280px) {
