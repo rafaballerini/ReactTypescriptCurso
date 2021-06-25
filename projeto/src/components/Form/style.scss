@@ -33,11 +33,12 @@
   }
 
   button {
+    width: 150px;
     align-self: center;
     color: #272626;
     font-size: 1.25rem;
-    background-color: #9DAC92;
-    padding: 8px 16px;
+    background-color: #88bcd1;
+    padding: 16px;
     border-radius: 10px;
     box-shadow: 2px 4px 4px #0000009F;
     
@@ -75,6 +76,7 @@
     }
 
     button {
+      width: 200px;
       grid-column-start: span 2;
       justify-self: center;
       font-size: 2.25rem;
