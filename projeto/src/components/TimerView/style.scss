@@ -1,12 +1,26 @@
+.span {
+  margin: 0 4px;
+}
+
 .timer-numero {
+  @extend .span;
   background-color: #5D677C;
-  box-shadow: 2px 2px 4px #2B2B2B9F inset;
+  box-shadow: 2px 2px 4px #2B2B2B inset;
   height: 3.6rem;
   padding: 8px 4px;
   border-radius: 10px;
   width: 3rem;
+
+  @media screen and (min-width:1280px) {
+    height: 10.8rem;
+    width: 9rem;
+  }
 }
 
 .timer-divisao {
   height: 4.2rem;
+
+  @media screen and (min-width:1280px) {
+    height: 12.6rem;
+  }
 }

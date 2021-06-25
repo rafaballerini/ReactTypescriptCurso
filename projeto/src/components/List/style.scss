@@ -11,4 +11,16 @@
     max-height: 350px;
     overflow-y: scroll;
   }
+
+  @media screen and (min-width:1280px) {
+    
+    h2{
+      font-size: 2.25rem;
+      margin-bottom: 24px;
+    }
+
+    ul {
+      overflow: auto;
+    }
+  }
 }
