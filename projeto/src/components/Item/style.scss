@@ -29,14 +29,14 @@
   background-color: #566F42;
 
   .concluido {
+    display: block;
     background-image: url('../../assets/img/check-mark.svg');
     background-repeat: no-repeat;
     background-size: 38px 38px;
-    display: block;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
     position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
     width: 42px;
     height: 43px;
   }

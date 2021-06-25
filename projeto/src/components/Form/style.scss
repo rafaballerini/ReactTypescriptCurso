@@ -1,16 +1,16 @@
 .nova-tarefa {
+  display:flex;
+  flex-direction: column;
   grid-area: nova-tarefa;
   background-color: #7687A1;
   border-radius: 10px;
-  padding: 12px;
   box-shadow: 2px 4px 4px #0000009F;
-  display:flex;
-  flex-direction: column;
+  padding: 12px;
 
   .inputContainer {
-    width: 100%;
     display: flex;
     flex-direction: column;
+    width: 100%;
     margin-bottom: 16px;
 
     label {
@@ -20,12 +20,13 @@
 
     input {
       width: 100%;
+      padding: 8px 12px 4px;
       box-sizing: border-box;
       border: unset;
       border-radius: 5px;
       background-color: #5D677C;
-      padding: 8px 12px 4px;
       box-shadow: 0px 2px 4px #2D2B2B9F inset;
+      
       &::placeholder {
         color: #BFBFBF;
       }
@@ -33,29 +34,26 @@
   }
 
   button {
-    width: 150px;
     align-self: center;
+    width: 150px;
+    padding: 16px;
     color: #272626;
     font-size: 1.25rem;
     background-color: #88bcd1;
-    padding: 16px;
     border-radius: 10px;
     box-shadow: 2px 4px 4px #0000009F;
     
     &:active {
-      background-color: #7E8876;
+      background-color: #7CA6B7;
       box-shadow: 2px 2px 4px #0000009F inset;
     }
   }
 
   @media screen and (min-width: 1280px) {
-    box-sizing: border-box;
-    font-size: 2.25rem;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-items: stretch;
-
+    font-size: 2.25rem;
     padding: 24px;
     box-sizing: border-box;
 
@@ -76,9 +74,9 @@
     }
 
     button {
-      width: 200px;
       grid-column-start: span 2;
       justify-self: center;
+      width: 200px;
       font-size: 2.25rem;
     }
   }

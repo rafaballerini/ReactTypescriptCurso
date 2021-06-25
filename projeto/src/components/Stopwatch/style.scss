@@ -1,34 +1,34 @@
 .cronometro {
-  grid-area: cronometro;
   display: flex;
   flex-direction: column;
   align-items: center;
+  grid-area: cronometro;
 
   .relogio-wrapper {
-    width: 100%;
-    box-sizing: border-box;
-    background-color: #7687A1;
-    border-radius: 10px;
-    padding: 16px 12px;
-    box-shadow: 2px 4px 4px #0000009F;
-    margin-bottom: 24px;
-    font-size: 5rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 16px 12px;
+    margin-bottom: 24px;
+    box-shadow: 2px 4px 4px #0000009F;
+    font-size: 5rem;
+    background-color: #7687A1;
   }
 
   button {
     width: 150px;
+    padding: 16px;
     color: #272626;
     font-size: 1.25rem;
     background-color: #88bcd1;
-    padding: 16px;
     border-radius: 10px;
-    box-shadow: 2px 4px 4px #000000;
+    box-shadow: 2px 4px 4px #0000009F;
     
     &:active {
-      background-color: #7E8876;
+      background-color: #7CA6B7;
       box-shadow: 2px 2px 4px #0000009F inset;
     }
   }
@@ -40,9 +40,9 @@
     }
 
     button {
-      width: 200px;
       grid-column-start: span 2;
       justify-self: center;
+      width: 200px;
       font-size: 2.25rem;
     }
   }

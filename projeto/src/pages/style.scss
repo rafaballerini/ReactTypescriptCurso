@@ -1,22 +1,21 @@
 .App {
-  min-width: 320px;
-  width: 100%;
-  background-color: #171717;
-  padding: 32px;
-  box-sizing: border-box;
-  min-height: calc(100vh - 32px);
-  border-radius: 10px;
   display: grid;
   grid-template-rows: min-content min-content auto;
   grid-template-areas: 
-    "nova-tarefa"
-    "cronometro"
-    "tarefas"
+  "nova-tarefa"
+  "cronometro"
+  "tarefas"
   ;
   row-gap: 24px;
+  min-width: 320px;
+  min-height: calc(100vh - 32px);
+  width: 100%;
+  padding: 32px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: #171717;
 
   @media screen and (min-width:1280px)  {
-    padding: 64px;
     grid-template-areas: 
     "nova-tarefa tarefas"
     "cronometro tarefas"
@@ -26,5 +25,6 @@
     grid-template-columns: 750px 300px;
     justify-content: center;
     align-content: center;
+    padding: 64px;
   }
 }

@@ -63,13 +63,13 @@ button {
 @import url('https://fonts.googleapis.com/css2?family=Manjari&display=swap');
 
 body {
-	font-family: 'Manjari', sans-serif;
-	background-color: #4C4C4C;
 	display: flex;
 	justify-content: center;
+	font-family: 'Manjari', sans-serif;
+	color: #F0F0F0;
+	background-color: #4C4C4C;
 	height: 100%;
 	width: 100%;
-	color: #F0F0F0;
 	padding: 16px;
 	box-sizing: border-box;
 }
