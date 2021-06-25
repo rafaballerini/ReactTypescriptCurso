@@ -5,6 +5,7 @@
   padding: 12px;
   margin-bottom: 8px;
   position: relative;
+  cursor: pointer;
 
   h3 {
     margin-bottom: 8px;
@@ -27,6 +28,7 @@
 
 .item--completed {
   background-color: #566F42;
+  cursor: auto;
 
   .concluido {
     display: block;
