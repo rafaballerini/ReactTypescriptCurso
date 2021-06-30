@@ -72,7 +72,25 @@ Resumindo, a diferença entre React e React Native é que o primeiro diz respeit
 
 **Mas Rafa, se o React é uma biblioteca Javascript, porque vamos utilizar Typescript nesse curso?**
 
+Primeiro de tudo: o que é esse typescript?
+É um super conjunto tipado do JavaScript desenvolvido pela Microsoft. Ou seja, uma das grandes vantagens de utilizar essa linguagem é que, diferente do Javascript que conhecemos, com ela definimos os tipos dos elementos que usaremos.
 
+Enquanto que com Javascript declarávamos um `let` no início do arquivo e o seu tipo (string, number..) era definido dinâmicamente durante a execução do programa, agora com Typescript já na declaração desse elemento definimos o seu tipo.
+
+Quando falamos de tipagem fraca em desenvolvimento, podemos pensar nessa característica do Javascript, já o typescript é um exemplo de linguagem fortemente tipada.
+
+Isso é ótimo para quem está acostumado com linguagens back-end como Java e C#, em que a tipagem é forte também, e deseja migrar para o front-end.
+
+Ué, mas o que essa tipagem pode trazer de benefício?
+
+Durante o desenvolvimento, nós teremos um controle maior de todas as variáveis, objetos, funções que utilizaremos. Caso a gente vá acessar uma propriedade de um objeto `Pessoa` por exemplo, equanto estivermos escrevendo o nosso código o próprio Intellisense da IDE ou editor de código, como o visual code que utilizaremos, irá sugerir todas as opções que você pode usar.
+
+Além dessa facilidade, nossas aplicações se tornam mais seguras e manuteníveis.
+
+Mas Rafa, como esse Typescript vira Javascript? Afinal é o Javascript que é lido pelo navegador né?
+O código Typescript é transformado em Javascript por um compilador de Typescript ou com Babel (compilador Javascript).
+
+Já que o Typescript possui todas essas vantagens, ele tem crescido muito no mercado, principalmente em conjunto com o React, como veremos nesse curso.
 
 ---
 
@@ -90,7 +108,7 @@ Já o **Yarn** é um gerenciador de pacotes para aplicar comandos prontos ao có
 
 [Um pouco da diferença entre eles](https://blog.umbler.com/br/npm-vs-yarn-e-agora-quem-podera-nos-defender/?gclid=Cj0KCQjwk4yGBhDQARIsACGfAetdwgXVjmeMvT55b8h80VYTJIDFO4lZa4SjT3OgQIF2qZmx58Uk754aAujKEALw_wcB)
 
-Primeiramente iremos instalar o typescript. Para isso, utilizaremos o comando `npm i typescript` ou `yarn add typescript`
+Primeiramente iremos instalar o typescript. Para isso, utilizaremos o comando `npm i typescript --save-dev` ou `yarn add typescript -D`
 
 Então, para criarmos o nosso projeto, podemos fazer isso manualmente, adicionando todos os arquivos necessários para sua configuração, ou apenas rodar um comando com um dos gerenciadores de pacote: [create react-app](https://create-react-app.dev/)
 
@@ -242,6 +260,10 @@ Além disso vou dar uma olhada no `.gitignore` e checar se a pasta `node_modules
 *VÍDEO 6*
 
 ## DOM e VDOM
+
+Antes de partirmos para o desenvolvimento do nosso projeto, preciso explicar apenas mais uma coisa pra você, afinal eu falei que o React atualizava os elementos na página sem precisar recarregar tudo novamente, porém não disse como!
+
+
 
 Se há uma vantagem clara que o React traz é no modo como ele trabalha com o DOM (Document Object Model) e atualiza os componentes de acordo com seus estados.
 
