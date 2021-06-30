@@ -6,7 +6,7 @@ Olá! Gostaria de te dar as boas vindas ao curso de React com Typescript e expli
 
 Para melhor compreensão dessa tecnologia eu recomendo já possuir um conhecimento básico a intermediário de HTML, CSS e principalmente Javascript ou Typescript.
 
-Por sinal, aqui na própria [documentação do React](https://pt-br.reactjs.org/docs/hello-world.html) existe um tutorial de Javascript para você avaliar o seu conhecimento na linguagem.
+Por sinal, aqui na própria [documentação do React](https://pt-br.reactjs.org/docs/hello-world.html) existe um tutorial de Javascript para você avaliar o seu conhecimento na linguagem. Além disso, temos alguns cursos na Alura de Javascript também, caso você tenha interesse.
 
 Então durante o curso mostrarei pra você desde o primeiro "Hello World" com React, até um projeto prático completo! Quer ver um pouquinho do que faremos? 
 
@@ -96,13 +96,21 @@ Já que o Typescript possui todas essas vantagens, ele tem crescido muito no mer
 
 *VÍDEO 4*
 
-**Criação do projeto**
+**Instalações necessárias**
 
-Para isso, será utilizado o NPM, mas se você preferir, temos também o famoso Yarn que também é um gerenciador de pacotes que pode ser utilizado aqui.
+Primeiro de tudo precisamos instalar na nossa máquina o [Node.js](https://nodejs.org/en/)
 
-**Gerenciadores de pacote**
+Os browsers não entendem a sintaxe de react, o node é utilizado apenas em desenvolvimento pra termos de forma fácil as funcionalidades do dele No final, quando o projeto é publicado, tudo é convertido de forma que seja compreendido pelos browser.
 
-O **NPM** é uma ferramenta do Node.js para o gerenciamento de pacotes. Ele permite instalar, desinstalar e atualizar dependências em uma aplicação por meio de uma simples instrução na linha de comando, [veja mais aqui](https://rockcontent.com/br/blog/npm/)
+Para istalar o Node.js basta entrar no site e seguir os [passo a passos](https://nodejs.org/en/download/) do seu sistema operacional.
+
+*Importante lembrar que o ideal é sempre baixarmos a versão LTS - suporte de longo prazo*
+
+Após instalar o Node, verificamos se deu tudo certo com o comando `node -v` e também já verificamos se foi instalado junto o NPM com `npm -v`
+
+**Gerenciadores de pacote e criação do projeto**
+
+O **NPM** é uma ferramenta do Node.js para o gerenciamento de pacotes. Ele permite instalar, desinstalar e atualizar dependências em uma aplicação por meio de uma simples instrução na linha de comando, [veja mais aqui](https://rockcontent.com/br/blog/npm/). Ele que iremos utilizar durante o curso.
 
 Já o **Yarn** é um gerenciador de pacotes para aplicar comandos prontos ao código de uma aplicação. Por ser uma ferramenta de código aberto, há uma comunidade de colaboradores experientes e qualificados que, continuamente, contribuem com novas adições de códigos, gerando pacotes variados. Assim, é possível utilizá-los nas mais diversas possibilidades, [veja mais aqui](https://rockcontent.com/br/blog/yarn/)
 
@@ -263,26 +271,26 @@ Além disso vou dar uma olhada no `.gitignore` e checar se a pasta `node_modules
 
 Antes de partirmos para o desenvolvimento do nosso projeto, preciso explicar apenas mais uma coisa pra você, afinal eu falei que o React atualizava os elementos na página sem precisar recarregar tudo novamente, porém não disse como!
 
+Em uma aplicação JavaScript tradicional, o programador deve se preocupar em descobrir quais dados mudaram para poder alterar o DOM (Document Object Model - estrutura que representa a camada visual de uma página) e os estados dos elementos criados. Isso é muito trabalhoso e pouco eficiente.
 
-
-Se há uma vantagem clara que o React traz é no modo como ele trabalha com o DOM (Document Object Model) e atualiza os componentes de acordo com seus estados.
-
-Em uma aplicação JavaScript tradicional, o programador deve se preocupar em descobrir quais dados mudaram para poder alterar o DOM e os estados dos elementos criados. Isso é muito trabalhoso e pouco eficiente (lembra do exemplo do botão de curtir acima?).
-
-O que o React propõe é a criação do seu próprio DOM, mais eficiente, no qual os componentes vivem, o que é mais conhecido como Virtual DOM.
+O que o React propõe é a criação do seu próprio DOM, mais eficiente, conhecido como Virtual DOM.
 
 Assim, toda vez que um componente é renderizado, o React atualiza o Virtual DOM de cada componente já renderizado e busca as mudanças. E como o Virtual DOM é leve, esse processo é muito rápido.
 
-O React então compara o Virtual DOM com uma imagem do DOM feita antes da atualização e descobre o que realmente mudou, atualizando somente os componentes que mudaram de estado. Há um enorme ganho de performance aqui.
+O React então compara o Virtual DOM com uma imagem do DOM feita antes da atualização e descobre o que realmente mudou, atualizando somente os componentes que mudaram de estado. 
 
-O Virtual DOM, ou VDOM, é uma representação em memória de um DOM (Document Object Model) real de uma interface.
+Ou seja, a Virtual DOM é mantida em memória e sincronizada com o DOM “real” por uma biblioteca como o [`ReactDOM`](https://pt-br.reactjs.org/docs/react-dom.html). Este processo é chamado de reconciliação.
 
-Na prática, DOM real é a estrutura que representa a camada visual de uma página.
+Devido a isso, há um enorme ganho de performance aqui!
 
-Para que fique mais claro, imagine o seguinte processo:
+Mostrando um pouco na prática onde isso acontece no projeto, se entrarmos no arquivo `index.tsx`, veremos `import ReactDOM from 'react-dom';` e esse ReactDom dentro da aplicação está chamando um método `ReactDOM.render()` e dentro dele, enviando o nosso componente pai `<App/>` e `document.getElementById('root')`.
 
-Para atualizar uma página, o React primeiro salva suas alterações em memória, ou seja, em um ambiente chamado de Virtual DOM. Isso acontece porque manipular um DOM virtual é muito mais rápido do que manipular um DOM real — ou seja, a página que está sendo atualizada.
+Nós o chamamos o `<div id="root"></div>` do nosso HTML `index.html` de nó raiz do DOM, porque tudo dentro dele será gerenciado pelo React DOM.
 
-Em front-end, a atualização de DOMs é extremamente corriqueira, uma vez que é através deles que as páginas de um site ou aplicativo são efetivamente atualizadas.
+Aplicações construídas apenas com React geralmente tem apenas um único nó raiz no DOM. Se deseja integrar o React a uma aplicação existente, você pode ter quantos nós raiz precisar.
 
-Após criada esta estrutura virtual, o React a traduz para a tela real com o mínimo de processos possível, trazendo mais agilidade para a atualização. Este processo é chamado de reconciliação.
+Para renderizar um elemento React em um nó raiz, passamos ambos para `ReactDOM.render()`
+
+Esse método renderiza o um elemento do React no DOM no container fornecido e retorna uma referência ao componente (ou retorna null para componentes sem state).
+
+Ele controla o conteúdo do nó contêiner que você passa. Qualquer elemento do DOM que existe dentro será substituído na primeira chamada. As próximas chamadas usam o algoritmo de diferenciação do React para atualizações eficientes.
