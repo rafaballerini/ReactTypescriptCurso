@@ -10,7 +10,7 @@ Por sinal, aqui na própria [documentação do React](https://pt-br.reactjs.org/
 
 Então durante o curso mostrarei pra você desde o primeiro "Hello World" com React, até um projeto prático completo! Quer ver um pouquinho do que faremos? 
 
-Tranformaremos [esse design do figma](https://www.figma.com/file/qu2Jp5c1OstWhniO4I1Bkc/Curso-React%2FTypescript?node-id=0%3A1) em uma [página totalmente dinâmica](https://react-typescript-curso.vercel.app/) apenas usando React que é uma biblioteca Javascript, porém com Typescript, que é superconjunto de JavaScript. Esses conceitos vão ficar muito mais claros em breve. 
+Transformaremos [esse design do figma](https://www.figma.com/file/qu2Jp5c1OstWhniO4I1Bkc/Curso-React%2FTypescript?node-id=0%3A1) em uma [página totalmente dinâmica](https://react-typescript-curso.vercel.app/) apenas usando React que é uma biblioteca Javascript, porém com Typescript, que é superconjunto de JavaScript. Esses conceitos vão ficar muito mais claros em breve. 
 
 Essa será uma plataforma para você, ou quem for utilizar o seu projeto, organizar os estudos. Será possível criar tarefas com esse pequeno formulário da página, definindo o que você deseja estudar e a quantidade de tempo do seu dia que você quer dedicar pra isso e logo em seguida, elas serão adicionadas automaticamente na lista do lado direito.
 
@@ -18,7 +18,7 @@ Assim que for realizar alguma dessas tarefas, você clicará sob o card, que ir�
 
 Quando chegar em 00:00, ele irá confirmar a tarefa já realizada automaticamente, podendo agora ser chamada uma outra a ser feita.
 
-Para aprender a fazer isso tudo, veremos conceitos importantes de React, como compoentes, estados e hooks, desenvolvimento e tipagem em typescript e também utilizaremos um gerenciador de pacotes, chamado NPM, para nos ajudar com os arquivos que precisamos usar no projeto.
+Para aprender a fazer isso tudo, veremos conceitos importantes de React, como componentes, estados e hooks, desenvolvimento e tipagem em typescript e também utilizaremos um gerenciador de pacotes, chamado NPM, para nos ajudar com os arquivos que precisamos usar no projeto.
 
 Não esqueça de se organizar a cada aula, pegar um cafézinho, o caderno de anotações, seja ele físico ou virtual e prestar bastante atenção no que veremos.
 
@@ -32,9 +32,9 @@ Vejo vocês lá!
 
 [Documentação](https://pt-br.reactjs.org/)
 
-O time do Facebook tinha dificuldade de sincronizar diferentes elementos na tela da plataforma deles. Um exemplo disso, é quando a pessoa está mexendo ali na aplicação e recebe uma notificação, que deve aparecer instantaneamente no canto da página. Pra isso, deveria ser recarregado tudo da página para apenas a notificação aparecer. Isso causava problemas com a performance da aplicaçao, então a equipe de desenvolvimento percebeu um bom problema a ser solucionado.
+O time do Facebook tinha dificuldade de sincronizar diferentes elementos na tela da plataforma deles. Um exemplo disso, é quando a pessoa está mexendo ali na aplicação e recebe uma notificação, que deve aparecer instantaneamente no canto da página. Pra isso, deveria ser recarregado tudo da página para apenas a notificação aparecer. Isso causava problemas com a performance da aplicação, então a equipe de desenvolvimento percebeu um bom problema a ser solucionado.
 
-Assim, eles criaram o React, que é uma biblioteca Javascript voltada pra criação de interfaces do usuário (ou seja, desenvolvimento front-end) que tem foco em exibir conteúdos alterados frequentemente sem precisar recarregar todo conteúdo.
+Assim, eles criaram o React, que é uma biblioteca Javascript voltada pra criação de interfaces do usuário ou usuária (ou seja, desenvolvimento front-end) que tem foco em exibir conteúdos alterados frequentemente sem precisar recarregar todo conteúdo.
 
 Em React, tudo é componente, então os elementos das páginas não ficam em um arquivo HTML gigante, com todas as tags, mas sim em arquivos separados por componentes, que são elementos reutilizáveis. Mais pra frente você vai entender melhor esse conceito de componente.
 
@@ -44,7 +44,7 @@ Em React, tudo é componente, então os elementos das páginas não ficam em um 
 2. [Instagram](https://www.instagram.com/)
 3. [Twitter](https://twitter.com/)
 
-Inclusive como vocês podem ver, eu tenho aqui uma extensão chamada [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) que fica azul, indicando que essa página contém React e quando estamos desenvolvendo, fica vermelha, indicando ambiente de desenvolvimento em React. Vocês vão ver! Ela também pode ser usada pra outras funções mas não veremos nesse curso.
+Inclusive como vocês podem ver, eu tenho aqui uma extensão chamada [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) que fica azul, indicando que essa página contém React e quando estamos desenvolvendo, fica vermelha, indicando ambiente de desenvolvimento em React. Vocês vão ver! Ela também pode ser usada para outras funções, mas não veremos nesse curso.
 
 **Biblioteca vs Framework:**
 
@@ -75,7 +75,8 @@ Resumindo, a diferença entre React e React Native é que o primeiro diz respeit
 Primeiro de tudo: o que é esse typescript?
 É um super conjunto tipado do JavaScript desenvolvido pela Microsoft. Podemos utilizá-lo com React, Angular ou até Vue, todos frameworks e bibliotecas SPAs. Ou seja, uma das grandes vantagens de utilizar essa linguagem é que, diferente do Javascript que conhecemos, com ela definimos os tipos dos elementos que usaremos.
 
-Enquanto que com Javascript declarávamos um `let` no início do arquivo e o seu tipo (string, number..) era definido dinâmicamente durante a execução do programa, agora com Typescript já na declaração desse elemento definimos o seu tipo.
+
+No JavaScript ao declaramos uma variável ou constante, o seu tipo (como por exemplo string, number..) é definido dinamicamente durante a execução do programa, com Typescript já no momento de uma declaração temos a opção de  definir o seu tipo.
 
 Quando falamos de tipagem fraca em desenvolvimento, podemos pensar nessa característica do Javascript, já o typescript é um exemplo de linguagem fortemente tipada.
 
@@ -83,7 +84,7 @@ Isso é ótimo para quem está acostumado com linguagens back-end como Java e C#
 
 Ué, mas o que essa tipagem pode trazer de benefício?
 
-Durante o desenvolvimento, nós teremos um controle maior de todas as variáveis, objetos, funções que utilizaremos. Caso a gente vá acessar uma propriedade de um objeto `Pessoa` por exemplo, equanto estivermos escrevendo o nosso código o próprio Intellisense da IDE ou editor de código, como o visual code que utilizaremos, irá sugerir todas as opções que você pode usar.
+Durante o desenvolvimento, nós teremos um controle maior de todas as variáveis, objetos e funções que utilizaremos. Caso a gente vá acessar uma propriedade de um objeto `Pessoa` por exemplo, enquanto estivermos escrevendo o nosso código o próprio Intellisense da IDE ou editor de código, como o visual code que utilizaremos, irá sugerir todas as opções que você pode usar.
 
 Além dessa facilidade, nossas aplicações se tornam mais seguras e manuteníveis.
 
@@ -100,7 +101,7 @@ Já que o Typescript possui todas essas vantagens, ele tem crescido muito no mer
 
 Primeiro de tudo precisamos instalar na nossa máquina o [Node.js](https://nodejs.org/en/)
 
-Os browsers não entendem a sintaxe de react, o node é utilizado apenas em desenvolvimento pra termos de forma fácil as funcionalidades do dele No final, quando o projeto é publicado, tudo é convertido de forma que seja compreendido pelos browser.
+Os browsers não entendem a sintaxe de react, o node é utilizado apenas em desenvolvimento pra termos de forma fácil as funcionalidades do dele. No final, quando o projeto é publicado, tudo é convertido de forma que seja compreendido pelos browser.
 
 Para istalar o Node.js basta entrar no site e seguir os [passo a passos](https://nodejs.org/en/download/) do seu sistema operacional.
 
@@ -116,7 +117,7 @@ Já o **Yarn** é um gerenciador de pacotes para aplicar comandos prontos ao có
 
 [Um pouco da diferença entre eles](https://blog.umbler.com/br/npm-vs-yarn-e-agora-quem-podera-nos-defender/?gclid=Cj0KCQjwk4yGBhDQARIsACGfAetdwgXVjmeMvT55b8h80VYTJIDFO4lZa4SjT3OgQIF2qZmx58Uk754aAujKEALw_wcB)
 
-Primeiramente iremos instalar o typescript. Para isso, utilizaremos o comando `npm i typescript --save-dev` ou `yarn add typescript -D`
+Primeiramente iremos verificar se com a instalação do Node.js também já foi instalado o TypeScript. Para isso, usamos o comando `typescript -v`. Caso tenha retornado algum erro, você pode instalar o typescript com o comando `npm i typescript --save-dev` ou `yarn add typescript -D`
 
 Então, para criarmos o nosso projeto, podemos fazer isso manualmente, adicionando todos os arquivos necessários para sua configuração, ou apenas rodar um comando com um dos gerenciadores de pacote: [create react-app](https://create-react-app.dev/)
 
@@ -148,7 +149,7 @@ Depois disso, **são criados vários arquivos e algumas pastas que vou explicar 
 
 **`node_modules`**
 
-Para que funcione corretamente, o react precisa de módulos que são armazenadas dentro dessa pasta (por isso não podemos apagar).
+Para que funcione corretamente, o react precisa de módulos que são armazenados dentro dessa pasta (por isso não podemos apagar).
 
 Módulos são códigos desenvolvidos por outras pessoas que você irá reutilizar no seu projeto.
 
@@ -160,11 +161,11 @@ Pasta que contém todos os recursos públicos da aplicação, como ícones, imag
 
 **`index.html`**
 
-É o arquivo html que contém na section `body` a tag `<div id="root"></div>`. É nesta tag que nossa aplicação React será renderizada e vai ser exibida. Esta div é o contâiner para a nossa aplicação React, é o template da página da aplicação.
+É o arquivo html que contém na section `body` a tag `<div id="root"></div>`. É nesta tag que nossa aplicação React será renderizada e vai ser exibida. Esta div é o contêiner para a nossa aplicação React, é o template da página da aplicação.
 
 Inclusive, se você abrir esse arquivo diretamente no navegador, aparecerá uma página em branco. 
 
-O que poderá ser adicionado nesse arquivo são metadados ou fontes web para o projeto, de resto desenvolveremos em outros arquivos.
+O que poderá ser adicionado neste arquivo são metadados ou fontes web para o projeto, de resto desenvolveremos em outros arquivos.
 
 **`manifest.json`**
 
@@ -172,9 +173,9 @@ Contém metadados sobre o projeto, como o nome, autor, ícones e descrição. Es
 
 **`robots.txt`**
 
-Aqui você permitirá ou recusará motores de busca indexarem tal parte do seu site, para que não apareça nas páginas de buscas. Normalmente colocamos páginas administrativas para não aparecerem nas páginas de buscas. 
+Aqui você permitirá ou recusará motores de busca indexarem determinadas seções do seu site, para que não apareça nas páginas de buscas. Normalmente colocamos páginas administrativas para não aparecerem nas páginas de buscas. 
 
-Um cuidado q você deve ter é que da mesma forma que você está escondendo ele das buscas e navegações, o aquivo robots.txt pode ser acessado pelo usuário colocando na url `/robots.txt`, sendo assim, o usuário poderá ver cada parte do seu site que você ocultou.
+Um cuidado que você deve ter é que da mesma forma que você está escondendo ele das buscas e navegação, o arquivo robots.txt pode ser acessado pelo usuário colocando na url `/robots.txt`, sendo assim, o usuário poderá ver cada parte do seu site que você ocultou.
 
 **`src`**
 
@@ -228,11 +229,11 @@ Aqui são descritos todos os arquivos que não serão enviados para o seu reposi
 
 **`package.json`**
 
-Esse arquivo lista em formato de objeto JSON algumas as configurações e pacotes necessários para o seu projeto, incluindo suas versões. Ele torna mais fácil para outras pessoas que forem desenvolver a aplicação saberem o que precisam utilizar pra isso.
+Esse arquivo lista em formato de objeto JSON algumas das configurações e pacotes necessários para o seu projeto, incluindo suas versões. Ele torna mais fácil para outras pessoas que forem desenvolver a aplicação saberem o que precisam utilizar para isso.
 
 **`README.md`**
 
-Esse arquivo é utilizado para documentar o seu projeto dentro do repositório git. Nele você descreverá informações sobre as tecnologias que você está utilizando, como rodar o projeto, como testar e tudo mais que achar necessário para outras pessoas que forem utilizá-lo.
+Esse arquivo é utilizado para documentar o seu projeto dentro do repositório git. Nele você descreve informações sobre as tecnologias que você está utilizando, como rodar o projeto, como testar e tudo mais que achar necessário para outras pessoas que forem utilizá-lo.
 
 Inclusive, se você abrir o arquivo verá que o próprio `create react-app` já deixou descrito alguns comandos utilizados para o desenvolvimento do projeto.
 
@@ -291,6 +292,6 @@ Aplicações construídas apenas com React geralmente tem apenas um único nó r
 
 Para renderizar um elemento React em um nó raiz, passamos ambos para `ReactDOM.render()`
 
-Esse método renderiza o um elemento do React no DOM no container fornecido e retorna uma referência ao componente (ou retorna null para componentes sem state).
+Esse método renderiza o um elemento do React no DOM no contêiner fornecido e retorna uma referência ao componente (ou retorna null para componentes sem state).
 
 Ele controla o conteúdo do nó contêiner que você passa. Qualquer elemento do DOM que existe dentro será substituído na primeira chamada. As próximas chamadas usam o algoritmo de diferenciação do React para atualizações eficientes.
