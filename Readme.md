@@ -1,4 +1,4 @@
-# Curso de React + Typescript
+# Algumas anotações para o curso de React + Typescript
 
 [Ementa do curso](https://media.discordapp.net/attachments/831974152667398214/852264633184157746/unknown.png)
 
