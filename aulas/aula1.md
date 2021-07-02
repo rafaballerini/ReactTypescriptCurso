@@ -73,7 +73,7 @@ Resumindo, a diferença entre React e React Native é que o primeiro diz respeit
 **Mas Rafa, se o React é uma biblioteca Javascript, porque vamos utilizar Typescript nesse curso?**
 
 Primeiro de tudo: o que é esse typescript?
-É um super conjunto tipado do JavaScript desenvolvido pela Microsoft. Ou seja, uma das grandes vantagens de utilizar essa linguagem é que, diferente do Javascript que conhecemos, com ela definimos os tipos dos elementos que usaremos.
+É um super conjunto tipado do JavaScript desenvolvido pela Microsoft. Podemos utilizá-lo com React, Angular ou até Vue, todos frameworks e bibliotecas SPAs. Ou seja, uma das grandes vantagens de utilizar essa linguagem é que, diferente do Javascript que conhecemos, com ela definimos os tipos dos elementos que usaremos.
 
 Enquanto que com Javascript declarávamos um `let` no início do arquivo e o seu tipo (string, number..) era definido dinâmicamente durante a execução do programa, agora com Typescript já na declaração desse elemento definimos o seu tipo.
 
