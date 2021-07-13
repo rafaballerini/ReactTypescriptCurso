@@ -38,10 +38,18 @@ function App() {
     }
   }
 
+  async function initiateCountdown() {
+    for (let i = 1; i <= time; i++) {
+      await date.delay()
+      setTime((prevState) => prevState - 1)
+    }
+    handleOnFinish()
+  }
+
   return (
     <div className="App">
       <Form saveTask={handleSaveTask}/>
-      <Stopwatch time={time} setTime={setTime} onFinish={handleOnFinish}/>
+      <Stopwatch time={time} initiateCountdown={initiateCountdown}/>
       <List list={list} onClick={handleOnClick}/>
     </div>
   );
