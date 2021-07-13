@@ -1,5 +1,5 @@
 import { TimerView } from '../TimerView/index'
-import './style.scss'
+import styles from './style.module.scss'
 
 interface IStopwatchProps {
   time: number;
@@ -9,8 +9,8 @@ interface IStopwatchProps {
 export function Stopwatch(props: IStopwatchProps){
   
   return (
-    <div className="cronometro">
-      <div className="relogio-wrapper">
+    <div className={styles.cronometro}>
+      <div className={styles.relogioWrapper}>
         <TimerView totalSeconds={props.time}/>
       </div>
       <button onClick={props.initiateCountdown}>Começar</button>

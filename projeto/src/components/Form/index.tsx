@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { ITaskData } from '../../types/Task';
-import './style.scss'
+import styles from './style.module.scss'
 
 interface IFormProps {
   saveTask: (data: ITaskData) => void;
@@ -23,8 +23,8 @@ export function Form (props: IFormProps) {
   }
 
   return (
-    <form onSubmit={handleOnSubmit} className="nova-tarefa">
-      <div className="inputContainer">
+    <form onSubmit={handleOnSubmit} className={styles.novaTarefa}>
+      <div className={styles.inputContainer}>
         <label htmlFor="task">Nova tarefa</label>
         <input 
           type="text" 
@@ -35,7 +35,7 @@ export function Form (props: IFormProps) {
           onChange={(event) => { setTask(event.target.value) }}
           required/>
       </div>
-      <div className="inputContainer">
+      <div className={styles.inputContainer}>
         <label htmlFor="time">Tempo</label>
         <input 
           type="time"

@@ -4,7 +4,7 @@
   align-items: center;
   grid-area: cronometro;
 
-  .relogio-wrapper {
+  .relogioWrapper {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -36,7 +36,7 @@
 
   @media screen and (min-width:1280px) {
     
-    .relogio-wrapper{
+    .relogioWrapper{
       font-size: 15rem;
     }
 

@@ -4,7 +4,7 @@ import {List} from '../components/List/index'
 import {Stopwatch} from '../components/Stopwatch/index'
 import { ITaskData } from '../types/Task'
 import { date } from 'common/utils/date'
-import './style.scss'
+import styles from './style.module.scss'
 
 function App() {
 
@@ -47,7 +47,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className={styles.App}>
       <Form saveTask={handleSaveTask}/>
       <Stopwatch time={time} initiateCountdown={initiateCountdown}/>
       <List list={list} onClick={handleOnClick}/>

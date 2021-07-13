@@ -1,4 +1,4 @@
-import './style.scss'
+import styles from './style.module.scss'
 
 interface ITimerViewProps {
   totalSeconds: number
@@ -13,11 +13,11 @@ export function TimerView(props: ITimerViewProps) {
 
   return (
     <>
-      <span className="timer-numero">{minuteDozens}</span>
-      <span className="timer-numero">{minuteUnits}</span>
-      <span className="timer-divisao">:</span>
-      <span className="timer-numero">{secondDozens}</span>
-      <span className="timer-numero">{secondUnits}</span>
+      <span className={styles.timerNumero}>{minuteDozens}</span>
+      <span className={styles.timerNumero}>{minuteUnits}</span>
+      <span className={styles.timerDivisao}>:</span>
+      <span className={styles.timerNumero}>{secondDozens}</span>
+      <span className={styles.timerNumero}>{secondUnits}</span>
     </>
   );
 }
