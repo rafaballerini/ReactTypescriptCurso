@@ -21,18 +21,18 @@
   }
 }
 
-.itemSelected {
+.itemSelecionado {
   background-color: #292929;
   box-shadow: 2px 4px 4px #0000009F inset;
 }
 
-.itemCompleted {
+.itemCompletado {
   background-color: #566F42;
   cursor: auto;
 
   .concluido {
     display: block;
-    background-image: url('../../assets/img/check-mark.svg');
+    background-image: url('../../../assets/img/check-mark.svg');
     background-repeat: no-repeat;
     background-size: 38px 38px;
     position: absolute;

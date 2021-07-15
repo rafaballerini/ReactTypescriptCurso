@@ -1,66 +1,48 @@
 import { useState } from 'react'
-import { Form } from '../components/Form/index'
-import { List } from '../components/List/index'
-import { Stopwatch } from '../components/Stopwatch/index'
-import { ITaskData } from '../types/Task'
+import { Form } from '../components/Formulario/index'
+import { Lista } from '../components/Lista/index'
+import { Cronometro } from '../components/Cronometro/index'
+import { ITarefa } from '../types/Tarefa'
 import { date } from 'common/utils/date'
-import styles from './style.module.scss'
+import styles from "./style.module.scss"
 
 function App() {
 
-  const [list, setList] = useState<ITaskData[]>([])
-  const [selected, setSelected] = useState<ITaskData>()
-  const [time, setTime] = useState<number>(0)
-  const [isRunning, setIsRunning] = useState(false);
+  const [lista, setLista] = useState<ITarefa[]>([])
+  const [selecionado, setSelecionado] = useState<ITarefa>()
+  const [tempo, setTempo] = useState<number>(0)
 
-
-  function handleSaveTask(data: ITaskData) {
-    setList([...list, { ...data, completed: false, selected: false }])
+  function enviarTarefa(data: ITarefa) {
+    setLista([...lista, { ...data, completado: false, selecionado: false }])
   }
 
-  function handleOnClick(item: ITaskData, index: number) {
-    item.selected = true
-    setSelected(item)
-    setList((prevList: ITaskData[]) =>
-      prevList.map((prevItem: ITaskData, prevIndex: number) => (
-        prevIndex === index ? { ...prevItem, selected: true } : prevItem
+  function selecionaItem(item: ITarefa, index: number) {
+    item.selecionado = true
+    setSelecionado(item)
+    setLista((listaAnterior: ITarefa[]) =>
+      listaAnterior.map((itemAnterior: ITarefa, indexAnterior: number) => (
+        indexAnterior === index ? { ...itemAnterior, selecionado: true } : itemAnterior
       ))
     )
-    setTime(date.timeToSeconds(item.time))
+    setTempo(date.timeToSeconds(item.tempo))
   }
 
-  function handleOnFinish() {
-    if (selected) {
-      const item = selected
-      setList((prevList: ITaskData[]) =>
-        prevList.map((prevItem: ITaskData) => (
-          prevItem.id === item.id ? { ...prevItem, selected: false, completed: true } : prevItem
+  function tarefaFinalizada() {
+    if (selecionado) {
+      const item = selecionado
+      setLista((listaAnterior: ITarefa[]) =>
+        listaAnterior.map((itemAnterior: ITarefa) => (
+          itemAnterior.id === item.id ? { ...itemAnterior, selecionado: false, completado: true } : itemAnterior
         )))
-      setTime(0)
+      setTempo(0)
     }
-    setIsRunning(false);
-  }
-
-
-  function initiateCountdown() {
-    setIsRunning(true);
-    const interval = setInterval(() => {
-      setTime(prev => {
-        if (prev === 0) {
-          clearInterval(interval);
-          handleOnFinish()
-          return prev
-        }
-        return prev - 1
-      });
-    }, 1000)
   }
 
   return (
-    <div className={styles.App}>
-      <Form saveTask={handleSaveTask} />
-      <Stopwatch initiateCountdown={initiateCountdown} isRunning={isRunning} time={time} />
-      <List list={list} onClick={handleOnClick} />
+    <div className={styles.AppStyle}>
+      <Form enviarTarefa={enviarTarefa} />
+      <Cronometro tempoFinalizado={tarefaFinalizada} tempo={tempo} />
+      <Lista lista={lista} abreItem={selecionaItem} />
     </div>
   );
 }
