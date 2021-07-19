@@ -1,5 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { setTimeout } from 'timers';
 import { Relogio } from './Relogio/index'
+import { date } from '../../common/utils/date'
 import styles from './style.module.scss'
 
 interface ICronometro {
@@ -9,22 +11,26 @@ interface ICronometro {
 
 export const Cronometro:React.FC<ICronometro> = props => {
   const [rodando, setRodando] = useState<boolean>(false);
-  const [proximoTempo, setProximoTempo] = useState<number>(0);
+  const [tempoRestante, setTempoRestante] = useState<number>(0);
   
-  function iniciaCronometro() {
-    console.log("cronometro iniciou")
-    const tempoDefinido = 1;
-    const delay = props.tempo * 1000
-    // setRodando(true);
-    const interval = setInterval(() => {
-      setProximoTempo(props.tempo - tempoDefinido);
-      if(proximoTempo < 0){
-        pararCronometro()
-        setProximoTempo(0);
-        clearInterval(interval);
-      }
-      setProximoTempo(proximoTempo);
-    }, delay)
+  const tempoSegundos = 1;
+  const tempoMilisegundos = tempoSegundos * 1000
+
+  useEffect(() => {
+    console.log(props.tempo)
+    setTempoRestante(props.tempo)
+  }, [props.tempo])
+
+  async function iniciaCronometro() {
+    setRodando(true);
+
+    while (tempoRestante > 0){
+      await date.delay()
+      const proximoTempo = tempoRestante - tempoSegundos
+      console.log(proximoTempo, tempoRestante, tempoSegundos)
+      setTempoRestante(proximoTempo);
+    }
+    pararCronometro()
   }
 
   function pararCronometro(){
@@ -35,9 +41,9 @@ export const Cronometro:React.FC<ICronometro> = props => {
   return (
     <div className={styles.cronometro}>
       <div className={styles.relogioWrapper}>
-        <Relogio totalSegundos={props.tempo}/>
+        <Relogio totalSegundos={tempoRestante}/>
       </div>
-      <button disabled={rodando} onClick={iniciaCronometro}>Começar</button>
+      <button disabled={rodando} onClick={() => iniciaCronometro()}>Começar</button>
     </div>
   )
 }

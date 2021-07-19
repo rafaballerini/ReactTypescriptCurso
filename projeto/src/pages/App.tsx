@@ -24,7 +24,8 @@ function App() {
         indexAnterior === index ? { ...itemAnterior, selecionado: true } : itemAnterior
       ))
     )
-    setTempo(date.timeToSeconds(item.tempo))
+    const segundos = date.timeToSeconds(item.tempo)
+    setTempo(segundos)
   }
 
   function tarefaFinalizada() {
@@ -36,7 +37,7 @@ function App() {
         )))
       setTempo(0)
     }
-  }
+  } 
 
   return (
     <div className={styles.AppStyle}>
