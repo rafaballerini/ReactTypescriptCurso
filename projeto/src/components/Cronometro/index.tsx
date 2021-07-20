@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
-import { setTimeout } from 'timers';
 import { Relogio } from './Relogio/index'
-import { date } from '../../common/utils/date'
+import { delay } from '../../common/utils/date'
 import styles from './style.module.scss'
 
 interface ICronometro {
@@ -22,7 +21,7 @@ export const Cronometro:React.FC<ICronometro> = props => {
     let contador = tempoRestante
 
     while (contador > 0){
-      await date.delay()
+      await delay()
       setTempoRestante(tempoRestante => tempoRestante - 1);
       contador--
     }

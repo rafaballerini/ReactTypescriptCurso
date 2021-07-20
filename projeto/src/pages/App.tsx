@@ -3,7 +3,7 @@ import { Form } from '../components/Formulario/index'
 import { Lista } from '../components/Lista/index'
 import { Cronometro } from '../components/Cronometro/index'
 import { ITarefa } from '../types/Tarefa'
-import { date } from 'common/utils/date'
+import { timeToSeconds } from 'common/utils/date'
 import styles from "./style.module.scss"
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
         indexAnterior === index ? { ...itemAnterior, selecionado: true } : itemAnterior
       ))
     )
-    const segundos = date.timeToSeconds(item.tempo)
+    const segundos = timeToSeconds(item.tempo)
     setTempo(segundos)
   }
 
