@@ -9,7 +9,7 @@ interface IFormulario {
 
 let contador = 0
 
-export function Form (props: IFormulario) {
+export const Form:React.FC<IFormulario> = props => {
 
   const [tarefa, setTarefa] = useState('')
   const [tempo, setTempo] = useState('00:00')

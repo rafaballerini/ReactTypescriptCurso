@@ -4,7 +4,7 @@ interface IRelogio {
   totalSegundos: number
 }
 
-export function Relogio(props: IRelogio) {
+export const Relogio:React.FC<IRelogio> = props => {
 
   const minutos = ('0'+ Math.floor(props.totalSegundos/60)).slice(-2);
   const segundosRestantes = ('0'+ props.totalSegundos % 60).slice(-2);

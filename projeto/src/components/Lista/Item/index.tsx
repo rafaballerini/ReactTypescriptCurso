@@ -7,7 +7,7 @@ interface IItem {
   abreItem: (item: ITarefa, index: number) => void
 }
 
-export function Item(props: IItem) {
+export const Item:React.FC<IItem> = props => {
   return (
     <li
       className={`${styles.item} ${props.item.selecionado ? styles.itemSelecionado : ""} ${props.item.completado ? styles.itemCompletado : ""}`}

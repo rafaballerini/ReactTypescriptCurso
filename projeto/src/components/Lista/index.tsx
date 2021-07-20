@@ -7,7 +7,7 @@ interface ILista {
   abreItem: (item: ITarefa, index: number) => void
 }
 
-export function Lista(props: ILista) {
+export const Lista:React.FC<ILista> = props => {
   return (
     <aside className={styles.listaTarefas}>
       <h2>Tarefas</h2>

@@ -6,7 +6,7 @@ import { ITarefa } from '../types/Tarefa'
 import { timeToSeconds } from 'common/utils/date'
 import styles from "./style.module.scss"
 
-function App() {
+export const App = () => {
 
   const [lista, setLista] = useState<ITarefa[]>([])
   const [selecionado, setSelecionado] = useState<ITarefa>()
@@ -47,5 +47,3 @@ function App() {
     </div>
   );
 }
-
-export default App
