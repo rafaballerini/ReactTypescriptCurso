@@ -12,23 +12,19 @@ interface ICronometro {
 export const Cronometro:React.FC<ICronometro> = props => {
   const [rodando, setRodando] = useState<boolean>(false);
   const [tempoRestante, setTempoRestante] = useState<number>(0);
-  
-  const tempoSegundos = 1;
-  const tempoMilisegundos = tempoSegundos * 1000
 
   useEffect(() => {
-    console.log(props.tempo)
     setTempoRestante(props.tempo)
   }, [props.tempo])
 
   async function iniciaCronometro() {
     setRodando(true);
+    let contador = tempoRestante
 
-    while (tempoRestante > 0){
+    while (contador > 0){
       await date.delay()
-      const proximoTempo = tempoRestante - tempoSegundos
-      console.log(proximoTempo, tempoRestante, tempoSegundos)
-      setTempoRestante(proximoTempo);
+      setTempoRestante(tempoRestante => tempoRestante - 1);
+      contador--
     }
     pararCronometro()
   }
