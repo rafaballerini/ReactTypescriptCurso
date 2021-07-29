@@ -10,7 +10,7 @@ interface ILista {
 export const Lista:React.FC<ILista> = props => {
   return (
     <aside className={styles.listaTarefas}>
-      <h2>Tarefas</h2>
+      <h2>Estudos do dia</h2>
       <ul>
         {
           props.lista.map((item, index) => (

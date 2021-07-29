@@ -25,13 +25,13 @@ export const Form:React.FC<IFormulario> = props => {
   return (
     <form onSubmit={salvarTarefa} className={styles.novaTarefa}>
       <div className={styles.inputContainer}>
-        <label htmlFor="tarefa">Nova tarefa</label>
+        <label htmlFor="tarefa">Adicione um novo estudo</label>
         <input 
           type="text" 
           name="tarefa" 
           id="tarefa" 
           value={tarefa}
-          placeholder="O que você fará?" 
+          placeholder="O que você quer estudar?" 
           onChange={(evento) => { setTarefa(evento.target.value) }}
           required/>
       </div>
