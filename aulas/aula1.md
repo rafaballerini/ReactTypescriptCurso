@@ -1,6 +1,6 @@
 ## Conceitos teóricos sobre React e Typescript
 
-## Criação do projeto
+## Criação do projeto com ts
 
 Para isso, será utilizado o Yarn, mas se você preferir, temos também o famoso NPM que também é um gerenciador de pacotes que pode ser utilizado aqui.
 
